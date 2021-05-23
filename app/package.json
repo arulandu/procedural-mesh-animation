@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://claeb101.github.io/procedural-mesh-animation/",
   "dependencies": {
     "@react-three/fiber": "^6.2.0",
     "@testing-library/jest-dom": "^5.11.4",
