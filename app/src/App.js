@@ -44,13 +44,17 @@ function AnimationCanvas() {
   );
 }
 
-
 function App() {
   return (
-    <div className="anim">
-      <Suspense fallback={<div>Loading...</div>}>
-        <AnimationCanvas />
-      </Suspense>
+    <div className="app">
+      <div className="anim">
+        <Suspense fallback={<div>Loading...</div>}>
+          <AnimationCanvas />
+        </Suspense>
+      </div>
+      <a className="badge" href="https://github.com/claeb101/procedural-mesh-animation" alt="Contributors">
+        <img src="https://img.shields.io/github/last-commit/claeb101/procedural-mesh-animation" alt=""/>
+      </a>
     </div>
   );
 }

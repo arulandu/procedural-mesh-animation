@@ -4,8 +4,14 @@ body {
   overflow-x: hidden;
 }
 
-.anim {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
+.app {
+  position: relative;
+
+  .anim {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: -1;
+  }
 }
