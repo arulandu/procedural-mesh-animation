@@ -2,7 +2,7 @@ import './App.scss';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
 import { Suspense, useRef } from 'react';
-import { GrowingExp, Ripple, Terrain } from './components/Anims';
+import { Terrain } from './components/Anims';
 
 extend({ OrbitControls })
 
@@ -20,7 +20,7 @@ function CameraControls() {
       ref={controlsRef}
       args={[camera, domElement]}
     // autoRotate
-    // autoRotateSpeed={-0.2}
+    // autoRotateSpeed={0.2}
     />
   );
 }
@@ -35,7 +35,7 @@ function AnimationCanvas() {
       {/* <hemisphereLight/> */}
       {/* <directionalLight /> */}
       <Suspense fallback={null}>
-        {/* <GrowingExp position={[-25, 0, 0]}/> */}
+        {/* <GrowingExp position={[0, -0.5, 0]}/> */}
         {/* <Ripple position={[25, 0, 0]}/> */}
         <Terrain position={[0,0,0]} rotation={[-Math.PI/2,0,0]}/>
       </Suspense>

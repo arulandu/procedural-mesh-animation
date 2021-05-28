@@ -10,12 +10,19 @@ export function GrowingExp({ position }) {
   }
 
   const colorOfXYZT = (x, y, z, t) => {
-    return [0.1 * Math.cos(z), z / 10, 0.2] // r, g, b
+    let r = Math.sqrt(x**2 + y**2)
+
+    return {
+      b: r/75,
+      g: z/5,
+      r: z
+    }
   }
 
   return (
     <MeshAnim
       position={position}
+      rotation={[-Math.PI/2, 0, 0]}
       grid={{
         width: 100,
         height: 100,
@@ -88,7 +95,12 @@ export function Terrain({ position, rotation }) {
 
   const colorOfXYZT = (x, y, z, t) => {
     let r = Math.sqrt(x**2 + y**2)
-    return [z, z / 5, r/75]
+
+    return {
+      b: r/75,
+      g: z/5,
+      r: z
+    }
   }
 
   const update = (t) => {

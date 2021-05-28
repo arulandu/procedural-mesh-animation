@@ -29,7 +29,10 @@ export function MeshAnim({
                 let y = sep * (yi - (height + 1.) / 2.)
                 let z = zOfXYT(x, y, t)
                 positions.push(x, y, z)
-                colors.push(...colorOfXYZT(x, y, z, t))
+
+                let color = colorOfXYZT(x, y, z, t)
+                colors.push(color.r, color.g, color.b)
+                
                 normals.push(0, 0, 1)
             }
         }
@@ -70,9 +73,9 @@ export function MeshAnim({
                 positions[i + 2] = zOfXYT(positions[i], positions[i + 1], t)
 
                 let c = colorOfXYZT(positions[i], positions[i + 1], positions[i + 2], t)
-                colors[i] = c[0]
-                colors[i + 1] = c[1]
-                colors[i + 2] = c[2]
+                colors[i] = c.r
+                colors[i + 1] = c.g
+                colors[i + 2] = c.b
                 i += 3
             }
         }
