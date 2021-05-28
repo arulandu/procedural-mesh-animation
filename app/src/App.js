@@ -29,7 +29,7 @@ function AnimationCanvas() {
   return (
     <Canvas
       colorManagement
-      camera={{ position: [0, 5, 10], fov: 75 }}
+      camera={{ position: [0, 2, 10], fov: 75 }}
     >
       <ambientLight/>
       {/* <hemisphereLight/> */}

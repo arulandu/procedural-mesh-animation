@@ -71,19 +71,21 @@ export function Ripple({ position }) {
 }
 
 export function Terrain({ position, rotation }) {
-  noise.seed(Math.floor(Math.random()*1000))
+  noise.seed(Math.floor(Math.random()*(2**16)))
   const sampleNoise = (x, y, z) => {
-    let amp = (i) => {
-      return Math.pow(2, -i)
-    }
-
-    let freq = (i) => {
-      return Math.pow(2, i-2)
-    }
+    let scale = 1/8
+    let octaves = 20
+    let persistence = 0.6
+    let lacunarity = 2
+    
+    let amp = 1
+    let freq = 1
 
     let v = 0
-    for(let i = 0; i < 20; i++){
-      v += amp(i)*perlin3(x*freq(i), y*freq(i), z)
+    for(let i = 0; i < octaves; i++){
+      v += amp*perlin3(x*freq*scale, y*freq*scale, z)
+      amp *= persistence
+      freq *= lacunarity
     }
     
     return v
@@ -94,17 +96,20 @@ export function Terrain({ position, rotation }) {
   }
 
   const colorOfXYZT = (x, y, z, t) => {
-    let r = Math.sqrt(x**2 + y**2)
 
     return {
-      b: r/75,
+      r: z,
       g: z/5,
-      r: z
+      b: Math.sqrt(x**2 + y**2)/75,
     }
+    /**
+     * Volcano:
+     * 
+     */
   }
 
   const update = (t) => {
-    return t + .005
+    return t + .002
   }
 
   return (
