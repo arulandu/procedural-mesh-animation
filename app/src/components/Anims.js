@@ -1,5 +1,6 @@
 import { MeshAnim } from "./MeshAnim";
 import noise, { perlin3 } from "./noise";
+import { randomSin } from './math';
 
 export function GrowingExp({ position }) {
   const zOfXYT = (x, y, t) => {
@@ -10,11 +11,11 @@ export function GrowingExp({ position }) {
   }
 
   const colorOfXYZT = (x, y, z, t) => {
-    let r = Math.sqrt(x**2 + y**2)
+    let r = Math.sqrt(x ** 2 + y ** 2)
 
     return {
-      b: r/75,
-      g: z/5,
+      b: r / 75,
+      g: z / 5,
       r: z
     }
   }
@@ -22,7 +23,7 @@ export function GrowingExp({ position }) {
   return (
     <MeshAnim
       position={position}
-      rotation={[-Math.PI/2, 0, 0]}
+      rotation={[-Math.PI / 2, 0, 0]}
       grid={{
         width: 100,
         height: 100,
@@ -67,27 +68,29 @@ export function Ripple({ position }) {
       }}
     />
   );
-  
+
 }
 
 export function Terrain({ position, rotation }) {
-  noise.seed(Math.floor(Math.random()*(2**16)))
+  const seed = Math.floor(Math.random() * (2 ** 16))
+  noise.seed(seed)
+
   const sampleNoise = (x, y, z) => {
-    let scale = 1/8
+    let scale = 1 / 8
     let octaves = 20
     let persistence = 0.6
     let lacunarity = 2
-    
+
     let amp = 1
     let freq = 1
 
     let v = 0
-    for(let i = 0; i < octaves; i++){
-      v += amp*perlin3(x*freq*scale, y*freq*scale, z)
+    for (let i = 0; i < octaves; i++) {
+      v += amp * perlin3(x * freq * scale, y * freq * scale, z)
       amp *= persistence
       freq *= lacunarity
     }
-    
+
     return v
   }
 
@@ -96,16 +99,16 @@ export function Terrain({ position, rotation }) {
   }
 
   const colorOfXYZT = (x, y, z, t) => {
+    const localRandom = randomSin(1001*x-7*y+seed)
+    const variation = () => {
+      return localRandom()*0.01;
+    }
 
     return {
-      r: z,
-      g: z/5,
-      b: Math.sqrt(x**2 + y**2)/75,
+      r: z + variation(),
+      g: z / 5 + variation(),
+      b: Math.sqrt(x ** 2 + y ** 2) / 75 + variation(),
     }
-    /**
-     * Volcano:
-     * 
-     */
   }
 
   const update = (t) => {
