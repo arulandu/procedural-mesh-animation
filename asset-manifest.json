@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/procedural-mesh-animation/static/css/main.a24df9e7.chunk.css",
-    "main.js": "/procedural-mesh-animation/static/js/main.eee8a3bc.chunk.js",
-    "main.js.map": "/procedural-mesh-animation/static/js/main.eee8a3bc.chunk.js.map",
+    "main.js": "/procedural-mesh-animation/static/js/main.e2a08b85.chunk.js",
+    "main.js.map": "/procedural-mesh-animation/static/js/main.e2a08b85.chunk.js.map",
     "runtime-main.js": "/procedural-mesh-animation/static/js/runtime-main.7956a523.js",
     "runtime-main.js.map": "/procedural-mesh-animation/static/js/runtime-main.7956a523.js.map",
-    "static/js/2.5f60db20.chunk.js": "/procedural-mesh-animation/static/js/2.5f60db20.chunk.js",
-    "static/js/2.5f60db20.chunk.js.map": "/procedural-mesh-animation/static/js/2.5f60db20.chunk.js.map",
+    "static/js/2.b061f964.chunk.js": "/procedural-mesh-animation/static/js/2.b061f964.chunk.js",
+    "static/js/2.b061f964.chunk.js.map": "/procedural-mesh-animation/static/js/2.b061f964.chunk.js.map",
     "static/js/3.8f7ff958.chunk.js": "/procedural-mesh-animation/static/js/3.8f7ff958.chunk.js",
     "static/js/3.8f7ff958.chunk.js.map": "/procedural-mesh-animation/static/js/3.8f7ff958.chunk.js.map",
     "index.html": "/procedural-mesh-animation/index.html",
     "static/css/main.a24df9e7.chunk.css.map": "/procedural-mesh-animation/static/css/main.a24df9e7.chunk.css.map",
-    "static/js/2.5f60db20.chunk.js.LICENSE.txt": "/procedural-mesh-animation/static/js/2.5f60db20.chunk.js.LICENSE.txt"
+    "static/js/2.b061f964.chunk.js.LICENSE.txt": "/procedural-mesh-animation/static/js/2.b061f964.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7956a523.js",
-    "static/js/2.5f60db20.chunk.js",
+    "static/js/2.b061f964.chunk.js",
     "static/css/main.a24df9e7.chunk.css",
-    "static/js/main.eee8a3bc.chunk.js"
+    "static/js/main.e2a08b85.chunk.js"
   ]
 }
